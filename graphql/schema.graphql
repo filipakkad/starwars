@@ -1,0 +1,31 @@
+type Character {
+  id: ID!
+  name: String!
+  episodes: [String]
+  planet: String
+}
+
+input CharacterInput {
+  id: ID!
+  name: String!
+  episodes: [String]
+  planet: String
+}
+
+input UpdateCharacterInput {
+  id: ID!
+  name: String!
+  episodes: [String]
+  planet: String
+}
+
+type Query {
+  getCharacterById(characterId: String!): Character
+  listCharacters: [Character]
+}
+
+type Mutation {
+  createCharacter(character: CharacterInput!): Character
+  updateCharacter(character: UpdateCharacterInput!): Character
+  deleteCharacter(characterId: String!): String
+}
